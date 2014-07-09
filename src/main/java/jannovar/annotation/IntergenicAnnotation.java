@@ -2,7 +2,10 @@ package jannovar.annotation;
 
 
 import jannovar.common.VariantType;
+import jannovar.exception.JannovarException;
 import jannovar.reference.TranscriptModel;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * This class is intended to provide a static method to generate annotations for INTERGENIC,
@@ -12,7 +15,7 @@ import jannovar.reference.TranscriptModel;
  */
 
 public class IntergenicAnnotation {
-
+    private static final Log LOG = LogFactory.getLog(IntergenicAnnotation.class);
     /**
      * This factory method creates an annotation object for an intergenic variant that is located
      * between two genes and is not nearby (threshold default of 1000 nt) to either of them. For
@@ -60,12 +63,13 @@ public class IntergenicAnnotation {
      * @param pos The chromosomal position of the variant
      * @return {@link Annotation} object corresponding to up-/down-stream variant
      */
-    public static Annotation createUpDownstreamAnnotation(TranscriptModel trmdl, int pos) {
+    public static Annotation createUpDownstreamAnnotation(TranscriptModel trmdl, int pos) throws JannovarException{
 
 	VariantType type=null;
 	if (trmdl == null) {
-	    System.out.println("createUpDownstreamAnnotation, TranscriptModel argument is null, pos=" + pos);
-	    System.exit(1);
+	    String s = ("createUpDownstreamAnnotation, TranscriptModel argument is null, pos=" + pos);
+	    LOG.error(s);
+	    throw new JannovarException(s);
 	}
 	int dist=0;
 	if (trmdl.isFivePrimeToGene(pos)) {

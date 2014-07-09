@@ -1,8 +1,11 @@
 package jannovar.reference;
 
 import jannovar.common.Constants;
+import jannovar.exception.JannovarException;
 
 import java.util.ArrayList;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * This class encapsulates information about a single transcript. Jannovar has functionality to use the data from the
@@ -17,11 +20,13 @@ import java.util.ArrayList;
  * <P>
  * This class provides methods that allow the Chromosome class to calculate what annotations are appropriate for a given
  * variant, and thus represents one of the core classes of Jannovar.
- * 
+ *
  * @author Peter N Robinson
  * @version 0.23, 29 March, 2014
  */
 public class TranscriptModel implements java.io.Serializable, Constants {
+
+	private static final Log LOG = LogFactory.getLog(TranscriptModel.class);
 
 	/**
 	 * Accession number of the transcript (e.g., the UCSC knownGene id - uc011nca.2). The version number may be
@@ -143,7 +148,7 @@ public class TranscriptModel implements java.io.Serializable, Constants {
 	 * following the initial construction of the object. This function was defined during refactoring efforts, placing
 	 * the parse functions in the IO hierarchy. TODO, is there are more elegant way of doing this?
 	 */
-	public void initialize() {
+	public void initialize() throws JannovarException {
 		calculateMRNALength();
 		calculateCDSLength();
 		calculateRefCDSStart();
@@ -387,7 +392,7 @@ public class TranscriptModel implements java.io.Serializable, Constants {
 		}
 		if (rvarend < 0) { /* i.e., rvarend has not be initialized yet */
 			rvarend = this.txEnd - this.txStart - cumlenintron + 1;
-			/* if this value is longer than transcript length, 
+			/* if this value is longer than transcript length,
 			   it suggests whole gene deletion. */
 		}
 		return rvarend;
@@ -485,7 +490,7 @@ public class TranscriptModel implements java.io.Serializable, Constants {
 	 * exon and we can add its entire length as exonEnds[i] - exonStarts[i] + 1.
 	 * </OL>
 	 */
-	private void calculateCDSLength() {
+	private void calculateCDSLength() throws JannovarException {
 		this.CDSlength = 0;
 		for (int i = 0; i < this.exonCount; ++i) {
 			if (this.cdsStart >= this.exonStarts[i] && this.cdsStart <= exonEnds[i]) {

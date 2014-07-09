@@ -1,5 +1,9 @@
 package jannovar.interval;
 
+import jannovar.exception.JannovarException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * This class implements an interval on a numberline with a lowpoint
  * and a highpoint (where lowpoint <= highpoint). The Interval is intended
@@ -13,6 +17,7 @@ package jannovar.interval;
  * @version 0.03 (22 May, 2013)
  */
 public class Interval<T> implements java.io.Serializable { 
+    private static final Log LOG = LogFactory.getLog(Interval.class);
     /** The object that we are putting into the interval tree (such as a 
      * {@link jannovar.reference.TranscriptModel TranscriptModel} object).*/
     private T value;
@@ -71,16 +76,17 @@ public class Interval<T> implements java.io.Serializable {
      * @param high upper endpoint of the interval
      * @param value The object represented by the interval.
      */
-    public Interval(int low, int high, T value)   {
+    public Interval(int low, int high, T value) throws JannovarException {
         if (low <= high) {
 	    this.lowpoint = low;
 	    this.highpoint = high;
 	    this.value = value;
 	} else {
-	    System.out.println("Error, low endpoint higher than upper endpoint for interval");
-	    System.out.println("Recheck the format of the input data, low end of interval must be less than high end");
-	    System.out.println(String.format("lo:%d-high:%d ()",this.lowpoint,this.highpoint));
-	    System.exit(1);
+	    String s = ("Error, low endpoint higher than upper endpoint for interval");
+	    s += ("Recheck the format of the input data, low end of interval must be less than high end");
+	    s += (String.format("lo:%d-high:%d ()",this.lowpoint,this.highpoint));
+	    LOG.error(s);
+	    throw new JannovarException(s);
 	}
     }
 
