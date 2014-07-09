@@ -367,7 +367,18 @@ public class Jannovar {
 		String ref = v.get_ref();
 		String alt = v.get_alt();
 		if (alt.charAt(0) == '[' || alt.charAt(0) == ']' || alt.equals(".")) {
-			out.write(line.getOriginalVCFLine() + "\n");
+			String[] a = line.getOriginalVCFLine().split("\t");
+
+			Chromosome c = chromosomeMap.get(chr);
+			if (a.length > 1 && c != null) {
+				out.write(c.getChromosomeName());
+				for (int i = 1; i < a.length; ++i) {
+					out.write("\t" + a[i]);
+				}
+				out.write("\n");
+			} else {
+				out.write(line.getOriginalVCFLine() + "\n");
+			}
 		} else {
 
 			Chromosome c = chromosomeMap.get(chr);
@@ -390,8 +401,15 @@ public class Jannovar {
 				effect = anno.getVariantType().toString();
 			}
 			String A[] = line.getOriginalVCFLine().split("\t");
-			for (int i = 0; i < 7; ++i)
+
+			//ADDED BY Jim V, to make sure chromosomes are always formatted properly.
+			out.write(c.getChromosomeName() + "\t");
+
+			for (int i = 1; i < 7; ++i) //was from 0 to 7 prior to above addition
+			{
 				out.write(A[i] + "\t");
+			}
+
 			/* Now add the stuff to the INFO line */
 			String INFO;
 			/*
