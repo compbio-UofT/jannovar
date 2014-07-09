@@ -7,12 +7,13 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+import jannovar.exception.JannovarException;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class IntervalTreeTest {
 
-	public List<Interval<String>> randomList() throws IntervalTreeException {
+	public List<Interval<String>> randomList() throws JannovarException {
 		List<Interval<String>> ilist = new ArrayList<Interval<String>>();
 		// in der for-Schleife speichere ich random integers in
 		// zwei variablen rLow und rHigh, wobei
@@ -36,7 +37,7 @@ public class IntervalTreeTest {
 		return ilist;
 	}
 
-	public List<Interval<String>> getIntervalList1() throws IntervalTreeException {
+	public List<Interval<String>> getIntervalList1() throws JannovarException {
 		List<Interval<String>> ilist = new ArrayList<Interval<String>>();
 		Interval<String> iA = new Interval<String>(1, 3, "a");
 		Interval<String> iB = new Interval<String>(5, 8, "b");
@@ -56,7 +57,7 @@ public class IntervalTreeTest {
 
 	}
 
-	public List<Interval<String>> getIntervalList2() throws IntervalTreeException {
+	public List<Interval<String>> getIntervalList2() throws JannovarException {
 		List<Interval<String>> ilist = new ArrayList<Interval<String>>();
 
 		ilist.add(new Interval<String>(1, 8, "a"));
@@ -75,7 +76,7 @@ public class IntervalTreeTest {
 
 	}
 
-	public List<Interval<String>> getIntervalList3() throws IntervalTreeException {
+	public List<Interval<String>> getIntervalList3() throws JannovarException {
 		List<Interval<String>> ilist = new ArrayList<Interval<String>>();
 
 		ilist.add(new Interval<String>(1, 8, "a"));
@@ -94,14 +95,14 @@ public class IntervalTreeTest {
 	}
 
 	@Test
-	public void testSearchPub1() throws IntervalTreeException {
+	public void testSearchPub1() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList2());
 		List<String> qy = tree.search(1, 1);
 		Assert.assertEquals("a", qy.get(0));
 	}
 
 	@Test
-	public void testSearchPub2() throws IntervalTreeException {
+	public void testSearchPub2() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList2());
 		List<String> qy = tree.search(13, 14);
 		Assert.assertEquals("f", qy.get(0));
@@ -109,7 +110,7 @@ public class IntervalTreeTest {
 	}
 
 	@Test
-	public void testSearchPub3() throws IntervalTreeException {
+	public void testSearchPub3() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList3());
 		List<String> qy = tree.search(30, 30);
 		Assert.assertEquals(2, qy.size());
@@ -126,14 +127,14 @@ public class IntervalTreeTest {
 	 */
 
 	@Test
-	public void testSearch1() throws IntervalTreeException {
+	public void testSearch1() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(1, 2);
 		Assert.assertEquals("a", qy.get(0));
 	}
 
 	@Test
-	public void testSearch2a() throws IntervalTreeException {
+	public void testSearch2a() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(6, 7);
 		Collections.sort(qy);
@@ -141,7 +142,7 @@ public class IntervalTreeTest {
 	}
 
 	@Test
-	public void testSearch2b() throws IntervalTreeException {
+	public void testSearch2b() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(11, 12);
 		Collections.sort(qy);
@@ -150,7 +151,7 @@ public class IntervalTreeTest {
 
 	/** Tests not finding an interval */
 	@Test
-	public void testSearch3a() throws IntervalTreeException {
+	public void testSearch3a() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(20, 20);
 		Assert.assertEquals(0, qy.size());
@@ -161,7 +162,7 @@ public class IntervalTreeTest {
 	 * d=(5,7)
 	 */
 	@Test
-	public void testSearch3b() throws IntervalTreeException {
+	public void testSearch3b() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(20, 20);
 		String lft = tree.getLeftNeighbor();
@@ -170,7 +171,7 @@ public class IntervalTreeTest {
 
 	/** Tests not finding an interval but getting the right neighbor */
 	@Test
-	public void testSearch3c() throws IntervalTreeException {
+	public void testSearch3c() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(20, 20);
 		String rt = tree.getRightNeighbor();
@@ -179,7 +180,7 @@ public class IntervalTreeTest {
 
 	/** Tests not finding an interval but getting the right neighbor */
 	@Test
-	public void testSearch3d() throws IntervalTreeException {
+	public void testSearch3d() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(512, 512);
 		// tree.debugPrint();
@@ -189,7 +190,7 @@ public class IntervalTreeTest {
 
 	/** Tests not finding an interval but getting the right neighbor */
 	@Test
-	public void testSearch3e() throws IntervalTreeException {
+	public void testSearch3e() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList1());
 		List<String> qy = tree.search(69, 69);
 		String rt = tree.getLeftNeighbor();

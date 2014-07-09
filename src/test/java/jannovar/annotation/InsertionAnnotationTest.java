@@ -89,7 +89,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar12() throws AnnotationException {
+	public void testInsertionVar12() throws JannovarException {
 		byte chr = 2;
 		int pos = 109371423;
 		String ref = "-";
@@ -117,7 +117,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * is not incorrect for now, if suboptimal.
 	 */
 	@Test
-	public void testfsInsertionVar152() throws AnnotationException {
+	public void testfsInsertionVar152() throws JannovarException {
 		byte chr = 5;
 		int pos = 135272376;
 		String ref = "-";
@@ -141,7 +141,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar13() throws AnnotationException {
+	public void testInsertionVar13() throws JannovarException {
 		byte chr = 2;
 		int pos = 109383313;
 		String ref = "-";
@@ -164,7 +164,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar14() throws AnnotationException {
+	public void testInsertionVar14() throws JannovarException {
 		byte chr = 2;
 		int pos = 109383877;
 		String ref = "-";
@@ -187,7 +187,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar17() throws AnnotationException {
+	public void testInsertionVar17() throws JannovarException {
 		byte chr = 2;
 		int pos = 179519685;
 		String ref = "-";
@@ -210,7 +210,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar18() throws AnnotationException {
+	public void testInsertionVar18() throws JannovarException {
 		byte chr = 2;
 		int pos = 211421454;
 		String ref = "-";
@@ -233,7 +233,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar26() throws AnnotationException {
+	public void testInsertionVar26() throws JannovarException {
 		byte chr = 3;
 		int pos = 195510343;
 		String ref = "-";
@@ -256,7 +256,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar27() throws AnnotationException {
+	public void testInsertionVar27() throws JannovarException {
 		byte chr = 3;
 		int pos = 195511593;
 		String ref = "-";
@@ -279,7 +279,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar30() throws AnnotationException {
+	public void testInsertionVar30() throws JannovarException {
 		byte chr = 4;
 		int pos = 190881973;
 		String ref = "-";
@@ -302,7 +302,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar31() throws AnnotationException {
+	public void testInsertionVar31() throws JannovarException {
 		byte chr = 5;
 		int pos = 23526344;
 		String ref = "-";
@@ -327,7 +327,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * a "C")
 	 */
 	@Test
-	public void testInsertionVar32() throws AnnotationException {
+	public void testInsertionVar32() throws JannovarException {
 		byte chr = 5;
 		int pos = 77745856;
 		String ref = "-";
@@ -350,7 +350,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar34() throws AnnotationException {
+	public void testInsertionVar34() throws JannovarException {
 		byte chr = 5;
 		int pos = 140573931;
 		String ref = "-";
@@ -373,7 +373,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar37() throws AnnotationException {
+	public void testInsertionVar37() throws JannovarException {
 		byte chr = 6;
 		int pos = 30782220;
 		String ref = "-";
@@ -396,7 +396,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar40() throws AnnotationException {
+	public void testInsertionVar40() throws JannovarException {
 		byte chr = 6;
 		int pos = 41754575;
 		String ref = "-";
@@ -419,7 +419,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar43() throws AnnotationException {
+	public void testInsertionVar43() throws JannovarException {
 		byte chr = 7;
 		int pos = 44144382;
 		String ref = "-";
@@ -442,7 +442,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar44() throws AnnotationException {
+	public void testInsertionVar44() throws JannovarException {
 		byte chr = 7;
 		int pos = 100637286;
 		String ref = "-";
@@ -465,7 +465,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar48() throws AnnotationException {
+	public void testInsertionVar48() throws JannovarException {
 		byte chr = 9;
 		int pos = 137968919;
 		String ref = "-";
@@ -571,7 +571,7 @@ public class InsertionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar51() throws AnnotationException {
+	public void testInsertionVar51() throws JannovarException {
 		byte chr = 4;
 		int pos = 190862166;
 		String ref = "-";

@@ -9,8 +9,11 @@ import java.io.FileNotFoundException;
 
 
 import jannovar.common.Constants;
+import jannovar.exception.JannovarException;
 import jannovar.exception.KGParseException;
 import jannovar.reference.TranscriptModel;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Parses the four files from the UCSC database relating the KnownGenes. 
@@ -54,6 +57,8 @@ import jannovar.reference.TranscriptModel;
  * @version 0.17 (10 July, 2013)
  */
 public class UCSCKGParser extends TranscriptDataParser implements  Constants {
+    private static final Log LOG = LogFactory.getLog(UCSCKGParser.class);
+
     /** Number of tab-separated fields in then UCSC knownGene.txt file (build hg19). */
     public static final int NFIELDS=12;
    
@@ -85,7 +90,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
      * construction of {@link #knownGeneMap}.
      * @return false if no UCSC gzip files found, otherwise return true.
      */
-    private boolean parseGzipUCSCFiles() {
+    private boolean parseGzipUCSCFiles() throws JannovarException{
 	String knownGene = addPrefixAndGzipSuffix(this.directory_path,Constants.knownGene);
 	String knownGeneMrna = addPrefixAndGzipSuffix(this.directory_path,Constants.knownGeneMrna);
 	String kgXref = addPrefixAndGzipSuffix(this.directory_path,Constants.kgXref);
@@ -94,22 +99,22 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 	File f;
 	f = new File(knownGene);
 	if (! f.exists() ) {
-	    System.err.println(String.format("Error: Could not find \"%s\"",f.getName()));
+	    LOG.error(String.format("Error: Could not find \"%s\"",f.getName()));
 	    return false;
 	} 
 	f = new File(knownGeneMrna);
 	if (! f.exists() ) {
-	    System.err.println("Error: Could not find knownGeneMrna.txt.gz");
+	    LOG.error("Error: Could not find knownGeneMrna.txt.gz");
 	    return false;
 	}
 	f = new File(kgXref);
 	if (! f.exists() ) {
-	    System.err.println("Error: Could not find knownGeneMrnakgXref.txt.gz");
+	    LOG.error("Error: Could not find knownGeneMrnakgXref.txt.gz");
 	    return false;
 	}
 	f = new File(known2locus);
 	if (! f.exists() ) {
-	    System.err.println("Error: Could not find known2locus.txt.gz");
+	    LOG.error("Error: Could not find known2locus.txt.gz");
 	    return false;
 	}
 	try{
@@ -118,8 +123,9 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 	    parseKnownGeneXref(kgXref,true);
 	    parseKnown2Locus(known2locus, true);
 	} catch (KGParseException e) {
-	    System.err.println("[Jannovar] Error parsing UCSC Transcript Definition Files: " + e.toString());
-	    System.exit(1);
+	    String s = ("[Jannovar] Error parsing UCSC Transcript Definition Files: " + e.toString());
+            LOG.error(s);
+	    throw new JannovarException(s);
 	}
 	return true;
     }
@@ -130,7 +136,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
      * This results in the 
      * construction of {@link #knownGeneMap}.
      */
-    public void parseUCSCFiles() {
+    public void parseUCSCFiles() throws JannovarException{
 	boolean success = parseGzipUCSCFiles();
 	if (success) return;
 	/* If we get here, then the Gzip files were not found, we need to try unziped files. */
@@ -144,9 +150,9 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 	    parseKnownGeneXref(kgXref,false);
 	    parseKnown2Locus(known2locus, false);
 	} catch (KGParseException kge) {
-	    System.out.println("UCSCKGParser.java: Error with file input");
-	    System.out.println(kge.toString());
-	    System.exit(1);
+	    String s = ("UCSCKGParser.java: Error with file input")+(kge.toString());
+	    LOG.error(s);
+	    throw new JannovarException(s);
 	}
     }
 
@@ -183,7 +189,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
      * @return {@link TranscriptModel} represented by the line
      * @throws jannovar.exception.KGParseException
      */
-    public TranscriptModel parseTranscriptModelFromLine(String line) throws KGParseException  {
+    public TranscriptModel parseTranscriptModelFromLine(String line) throws KGParseException, JannovarException  {
 	TranscriptModel model = TranscriptModel.createTranscriptModel();
 	String A[] = line.split("\t");
 	if (A.length != NFIELDS) {
@@ -291,7 +297,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
      * @param isGzip <code>true</code> if gzipped
      * @throws jannovar.exception.KGParseException
      */
-    public void parseKnownGeneFile(String kgpath, boolean isGzip) throws KGParseException {
+    public void parseKnownGeneFile(String kgpath, boolean isGzip) throws KGParseException, JannovarException {
 //	int linecount=0;
 //	int exceptionCount=0;
 	try{
@@ -329,7 +335,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
      * id to the corresponing {@link jannovar.reference.TranscriptModel TranscriptModel}
      * objects.
      */
-    private void parseKnown2Locus(String locuspath, boolean isGzip) throws KGParseException {
+    private void parseKnown2Locus(String locuspath, boolean isGzip) throws KGParseException, JannovarException {
 	try{
 	    
 	    BufferedReader br = getBufferedReaderFromFilePath(locuspath,isGzip); 
@@ -341,10 +347,12 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 	    while ((line = br.readLine()) != null)   {
 		String A[] = line.split("\t");
 		if (A.length != 2) {
-		    System.err.println("[ERROR] Bad format for UCSC KnownToLocusLink.txt file:\n" + line);
-		    System.err.println("[ERROR] Got " + A.length + " fields instead of the expected 2");
-		    System.err.println("[ERROR] Fix problem in UCSC file before continuing");
-		    System.exit(1);
+		    String s = ("[ERROR] Bad format for UCSC KnownToLocusLink.txt file:\n" + line);
+		    s+=("[ERROR] Got " + A.length + " fields instead of the expected 2"+"\n");
+		    s+=("[ERROR] Fix problem in UCSC file before continuing"+"\n");
+		    LOG.error(s);
+		    throw new JannovarException(s);
+
 		}
 		String id = A[0];
 		Integer geneID = Integer.parseInt(A[1]);
@@ -360,7 +368,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 	    br.close();
 	    String msg = String.format("[INFO] knownToLocusLink contained ids for %d knownGenes (no ids available for %d)",
 				       foundID,notFoundID);
-	    System.out.println(msg);
+	    LOG.info(msg);
 	} catch (FileNotFoundException fnfe) {
 	    String s = String.format("Exception while parsing UCSC  knownToLocusLink file at \"%s\"\n%s",
 				     locuspath,fnfe.toString());
@@ -382,7 +390,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
      * The sequences are then added to the corresponding {@link jannovar.reference.TranscriptModel TranscriptModel}
      * objects.
      */
-    private void parseKnownGeneMrna(String mrnapath, boolean isGzip) throws KGParseException {
+    private void parseKnownGeneMrna(String mrnapath, boolean isGzip) throws KGParseException, JannovarException {
 	
 	try{
 	    BufferedReader br = getBufferedReaderFromFilePath(mrnapath,isGzip); 
@@ -393,10 +401,11 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 	    while ((line = br.readLine()) != null)   {
 		String A[] = line.split("\t");
 		if (A.length != 2) {
-		    System.err.println("[ERROR] Bad format for UCSC KnownGeneMrna.txt file:\n" + line);
-		    System.err.println("[ERROR] Got " + A.length + " fields instead of the expected 2");
-		    System.err.println("[ERROR] Fix problem in UCSC file before continueing");
-		    System.exit(1);
+		    String s = "[ERROR] Bad format for UCSC KnownGeneMrna.txt file:\n" + line;
+		    s+=("[ERROR] Got " + A.length + " fields instead of the expected 2\n");
+		    s+=("[ERROR] Fix problem in UCSC file before continuing");
+		    LOG.error(s);
+		    throw new JannovarException(s);
 		}
 		
 		String id = A[0];
@@ -404,7 +413,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 		TranscriptModel kg = this.knownGeneMap.get(id);
 		if (kg == null) {
 		    /** Note: many of these sequences seem to be for genes on scaffolds, e.g., chrUn_gl000243 */
-		    //System.err.println("Error, could not find FASTA sequence for known gene \"" + id + "\"");
+		    //LOG.error("Error, could not find FASTA sequence for known gene \"" + id + "\"");
 		    kgWithNoSequence++;
 		    continue;
 		    //System.exit(1);
@@ -472,7 +481,7 @@ public class UCSCKGParser extends TranscriptDataParser implements  Constants {
 		TranscriptModel kg = this.knownGeneMap.get(id);
 		if (kg == null) {
 		    /** Note: many of these sequences seem to be for genes on scaffolds, e.g., chrUn_gl000243 */
-		    //System.err.println("Error, could not find xref sequence for known gene \"" + id + "\"");
+		    //LOG.error("Error, could not find xref sequence for known gene \"" + id + "\"");
 //		    kgWithNoXref++;
 		    continue;
 		    //System.exit(1);

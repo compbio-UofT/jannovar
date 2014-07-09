@@ -56,7 +56,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynVar2hand() throws AnnotationException {
+	public void testSynVar2hand() throws JannovarException {
 		byte chr = X_CHROMOSOME;
 		int pos = 154009588;
 		String ref = "T";
@@ -82,7 +82,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar2() throws AnnotationException {
+	public void testSynonymousVar2() throws JannovarException {
 		byte chr = 1;
 		int pos = 16475123;
 		String ref = "C";
@@ -105,7 +105,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar3() throws AnnotationException {
+	public void testSynonymousVar3() throws JannovarException {
 		byte chr = 1;
 		int pos = 19447843;
 		String ref = "C";
@@ -132,7 +132,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar6() throws AnnotationException {
+	public void testSynonymousVar6() throws JannovarException {
 		byte chr = 1;
 		int pos = 34329897;
 		String ref = "T";
@@ -155,7 +155,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar7() throws AnnotationException {
+	public void testSynonymousVar7() throws JannovarException {
 		byte chr = 1;
 		int pos = 36927733;
 		String ref = "G";
@@ -178,7 +178,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar9() throws AnnotationException {
+	public void testSynonymousVar9() throws JannovarException {
 		byte chr = 1;
 		int pos = 100203693;
 		String ref = "G";
@@ -201,7 +201,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar10() throws AnnotationException {
+	public void testSynonymousVar10() throws JannovarException {
 		byte chr = 1;
 		int pos = 109794252;
 		String ref = "T";
@@ -226,7 +226,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar12() throws AnnotationException {
+	public void testSynonymousVar12() throws JannovarException {
 		byte chr = 1;
 		int pos = 112308972;
 		String ref = "G";
@@ -249,7 +249,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar13() throws AnnotationException {
+	public void testSynonymousVar13() throws JannovarException {
 		byte chr = 1;
 		int pos = 152193291;
 		String ref = "G";
@@ -274,7 +274,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar15() throws AnnotationException {
+	public void testSynonymousVar15() throws JannovarException {
 		byte chr = 1;
 		int pos = 165533005;
 		String ref = "C";
@@ -317,7 +317,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar17() throws AnnotationException {
+	public void testSynonymousVar17() throws JannovarException {
 		byte chr = 1;
 		int pos = 172356437;
 		String ref = "A";
@@ -340,7 +340,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar19() throws AnnotationException {
+	public void testSynonymousVar19() throws JannovarException {
 		byte chr = 1;
 		int pos = 183105534;
 		String ref = "T";
@@ -363,7 +363,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar20() throws AnnotationException {
+	public void testSynonymousVar20() throws JannovarException {
 		byte chr = 1;
 		int pos = 201969082;
 		String ref = "G";
@@ -386,7 +386,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar22() throws AnnotationException {
+	public void testSynonymousVar22() throws JannovarException {
 		byte chr = 1;
 		int pos = 222721288;
 		String ref = "C";
@@ -408,7 +408,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * annovar: OBSCN:uc001hsn.3:exon4:c.1431A>G:p.L477L,OBSCN:uc009xez.1:exon4:c.1431A>G:p.L477L, chr1:228402047A>G
 	 */
 	@Test
-	public void testSynonymousVar23() throws AnnotationException {
+	public void testSynonymousVar23() throws JannovarException {
 		byte chr = 1;
 		int pos = 228402047;
 		String ref = "A";
@@ -431,7 +431,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar120() throws AnnotationException {
+	public void testSynonymousVar120() throws JannovarException {
 		byte chr = 7;
 		int pos = 16834597;
 		String ref = "A";
@@ -454,7 +454,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar121() throws AnnotationException {
+	public void testSynonymousVar121() throws JannovarException {
 		byte chr = 7;
 		int pos = 18993870;
 		String ref = "C";
@@ -477,7 +477,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar124() throws AnnotationException {
+	public void testSynonymousVar124() throws JannovarException {
 		byte chr = 7;
 		int pos = 63981563;
 		String ref = "A";
@@ -500,7 +500,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar125() throws AnnotationException {
+	public void testSynonymousVar125() throws JannovarException {
 		byte chr = 7;
 		int pos = 98782750;
 		String ref = "C";
@@ -523,7 +523,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar130() throws AnnotationException {
+	public void testSynonymousVar130() throws JannovarException {
 		byte chr = 7;
 		int pos = 137128830;
 		String ref = "T";
@@ -546,7 +546,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar288() throws AnnotationException {
+	public void testSynonymousVar288() throws JannovarException {
 		byte chr = 19;
 		int pos = 4251069;
 		String ref = "T";
@@ -569,7 +569,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar290() throws AnnotationException {
+	public void testSynonymousVar290() throws JannovarException {
 		byte chr = 19;
 		int pos = 9090531;
 		String ref = "T";
@@ -592,7 +592,7 @@ public class SynonymousAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSynonymousVar329() throws AnnotationException {
+	public void testSynonymousVar329() throws JannovarException {
 		byte chr = 22;
 		int pos = 36691607;
 		String ref = "A";

@@ -65,7 +65,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:11832100T>A
  *</P>
  */
-@Test public void testUpstreamVar2() throws AnnotationException  {
+@Test public void testUpstreamVar2() throws JannovarException  {
 	byte chr = 1;
 	int pos = 11832100;
 	String ref = "T";
@@ -88,7 +88,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:11986554->G
  *</P>
  */
-@Test public void testUpstreamVar3() throws AnnotationException  {
+@Test public void testUpstreamVar3() throws JannovarException  {
 	byte chr = 1;
 	int pos = 11986554;
 	String ref = "-";
@@ -112,7 +112,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:17698725C>T
  *</P>
  */
-@Test public void testUpstreamVar4() throws AnnotationException  {
+@Test public void testUpstreamVar4() throws JannovarException  {
 	byte chr = 1;
 	int pos = 17698725;
 	String ref = "C";
@@ -135,7 +135,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:57432128T>C
  *</P>
  */
-@Test public void testUpstreamVar5() throws AnnotationException  {
+@Test public void testUpstreamVar5() throws JannovarException  {
 	byte chr = 1;
 	int pos = 57432128;
 	String ref = "T";
@@ -158,7 +158,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:79152696A>G
  *</P>
  */
-@Test public void testUpstreamVar6() throws AnnotationException  {
+@Test public void testUpstreamVar6() throws JannovarException  {
     byte chr = 1;
     int pos = 79152696;
     String ref = "A";
@@ -181,7 +181,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:84764012A>T
  *</P>
  */
-@Test public void testUpstreamVar7() throws AnnotationException  {
+@Test public void testUpstreamVar7() throws JannovarException  {
 	byte chr = 1;
 	int pos = 84764012;
 	String ref = "A";
@@ -205,7 +205,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:87099909A>G
  *</P>
  */
-@Test public void testUpstreamVar8() throws AnnotationException  {
+@Test public void testUpstreamVar8() throws JannovarException  {
 	byte chr = 1;
 	int pos = 87099909;
 	String ref = "A";
@@ -229,7 +229,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:154600533A>G
  *</P>
  */
-@Test public void testUpstreamVar9() throws AnnotationException  {
+@Test public void testUpstreamVar9() throws JannovarException  {
 	byte chr = 1;
 	int pos = 154600533;
 	String ref = "A";
@@ -255,7 +255,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:247921717C>A
  *</P>
  */
-@Test public void testUpstreamVar12() throws AnnotationException  {
+@Test public void testUpstreamVar12() throws JannovarException  {
 	byte chr = 1;
 	int pos = 247921717;
 	String ref = "C";
@@ -278,7 +278,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:248005213G>C
  *</P>
  */
-@Test public void testUpstreamVar13() throws AnnotationException  {
+@Test public void testUpstreamVar13() throws JannovarException  {
 	byte chr = 1;
 	int pos = 248005213;
 	String ref = "G";
@@ -301,7 +301,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr1:248524817CA>-
  *</P>
  */
-@Test public void testUpstreamVar14() throws AnnotationException  {
+@Test public void testUpstreamVar14() throws JannovarException  {
 	byte chr = 1;
 	int pos = 248524817;
 	String ref = "CA";
@@ -324,7 +324,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr2:34628927AAAAT>-
  *</P>
  */
-@Test public void testUpstreamVar15() throws AnnotationException  {
+@Test public void testUpstreamVar15() throws JannovarException  {
 	byte chr = 2;
 	int pos = 34628927;
 	String ref = "AAAAT";
@@ -347,7 +347,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr2:46706618C>G
  *</P>
  */
-@Test public void testUpstreamVar16() throws AnnotationException  {
+@Test public void testUpstreamVar16() throws JannovarException  {
 	byte chr = 2;
 	int pos = 46706618;
 	String ref = "C";
@@ -372,7 +372,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr2:198299808G>A
  *</P>
  */
-@Test public void testUpstreamVar22() throws AnnotationException  {
+@Test public void testUpstreamVar22() throws JannovarException  {
 	byte chr = 2;
 	int pos = 198299808;
 	String ref = "G";
@@ -397,7 +397,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr3:75986622C>G
  *</P>
  */
-@Test public void testUpstreamVar28() throws AnnotationException  {
+@Test public void testUpstreamVar28() throws JannovarException  {
 	byte chr = 3;
 	int pos = 75986622;
 	String ref = "C";
@@ -420,7 +420,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr3:101443461T>C
  *</P>
  */
-@Test public void testUpstreamVar29() throws AnnotationException  {
+@Test public void testUpstreamVar29() throws JannovarException  {
 	byte chr = 3;
 	int pos = 101443461;
 	String ref = "T";
@@ -446,7 +446,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr4:15965194C>T
  *</P>
  */
-@Test public void testUpstreamVar33() throws AnnotationException  {
+@Test public void testUpstreamVar33() throws JannovarException  {
 	byte chr = 4;
 	int pos = 15965194;
 	String ref = "C";
@@ -473,7 +473,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chosen for this variant, because the variant is closer to DQ591060.
  *</P>
  */
-@Test public void testUpstreamVar36() throws AnnotationException  {
+@Test public void testUpstreamVar36() throws JannovarException  {
 	byte chr = 5;
 	int pos = 98861045;
 	String ref = "-";
@@ -497,7 +497,7 @@ public class UpstreamAnnotationTest implements Constants {
  * chr5:145252574C>T
  *</P>
  */
-@Test public void testUpstreamVar37() throws AnnotationException  {
+@Test public void testUpstreamVar37() throws JannovarException  {
 	byte chr = 5;
 	int pos = 145252574;
 	String ref = "C";

@@ -108,7 +108,7 @@ public class RefSeqParser extends TranscriptDataParser implements Constants  {
      * in annovar. At a later date, it may be worthwhile to switch to the UCSC-way of half-open zero based coordinates.
      * @param line A single line of the UCSC refFlat.txt file
      */
-    public TranscriptModel parseTranscriptModelFromLine(String line) throws KGParseException  {
+    public TranscriptModel parseTranscriptModelFromLine(String line) throws KGParseException, JannovarException {
 	TranscriptModel model = TranscriptModel.createTranscriptModel();
 	String A[] = line.split("\t");
 	if (A.length != NFIELDS) {

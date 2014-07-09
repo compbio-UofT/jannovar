@@ -9,6 +9,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import jannovar.exception.JannovarException;
 import jannovar.reference.TranscriptModel;
 import jannovar.io.UCSCKGParser;
 import jannovar.common.Constants;
@@ -27,7 +28,7 @@ public class TranscriptModelTest implements Constants {
     static TranscriptModel uc010wrv = null;
 
 
-      @BeforeClass public static void setUp() throws KGParseException {
+      @BeforeClass public static void setUp() throws JannovarException {
 	  String dummy = "";
 	  UCSCKGParser parser = new UCSCKGParser(dummy);
 	  /* Note that uc021olp. is TESK2. */

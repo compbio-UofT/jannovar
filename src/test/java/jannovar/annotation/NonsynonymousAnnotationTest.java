@@ -65,7 +65,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:6278414A>G
  *</P>
  */
-@Test public void testNonSyn2ahand() throws AnnotationException  {
+@Test public void testNonSyn2ahand() throws JannovarException {
 	byte chr = X_CHROMOSOME;
 	int pos = 154009588;
 	String ref = "T";
@@ -90,7 +90,7 @@ public class NonsynonymousAnnotationTest implements Constants {
 
  *</P>
  */
-@Test public void testNcRnaExonicVar76() throws AnnotationException  {
+@Test public void testNcRnaExonicVar76() throws JannovarException {
 	byte chr = 2;
 	int pos = 114017029;
 	String ref = "A";
@@ -117,7 +117,7 @@ public class NonsynonymousAnnotationTest implements Constants {
 
  *</P>
  */
-@Test public void testNcRnaExonicVar215() throws AnnotationException  {
+@Test public void testNcRnaExonicVar215() throws JannovarException {
 	byte chr = 7;
 	int pos = 127637816;
 	String ref = "A";
@@ -141,7 +141,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:6278414A>G
  *</P>
  */
-@Test public void testNonsynVar1hand() throws AnnotationException  {
+@Test public void testNonsynVar1hand() throws JannovarException {
 	byte chr = 1;
 	int pos = 6278414;
 	String ref = "A";
@@ -164,7 +164,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:12887549T>C
  *</P>
  */
-@Test public void testNonsynVar2() throws AnnotationException  {
+@Test public void testNonsynVar2() throws JannovarException {
 	byte chr = 1;
 	int pos = 12887549;
 	String ref = "T";
@@ -189,7 +189,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:13183439T>C
  *</P>
  */
-@Test public void testNonsynVar3() throws AnnotationException  {
+@Test public void testNonsynVar3() throws JannovarException {
 	byte chr = 1;
 	int pos = 13183439;
 	String ref = "T";
@@ -214,7 +214,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:15687059A>G
  *</P>
  */
-@Test public void testNonsynVar4() throws AnnotationException  {
+@Test public void testNonsynVar4() throws JannovarException {
 	byte chr = 1;
 	int pos = 15687059;
 	String ref = "A";
@@ -241,7 +241,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * <CASP9(uc001awp.[4:exon5:c.194A>G:p.Q65R,uc009voi.4:exon5:c.194A>G:p.Q65R,uc010obm.3:exon5:c.413A>G:p.Q138R,uc001awn.4]:exon5:c.662A>G:p.Q2...>
  *
  */
-@Test public void testNonsynVar5() throws AnnotationException  {
+@Test public void testNonsynVar5() throws JannovarException {
 	byte chr = 1;
 	int pos = 15832543;
 	String ref = "T";
@@ -268,7 +268,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:19595137C>T
  *</P>
  */
-@Test public void testNonsynVar6() throws AnnotationException  {
+@Test public void testNonsynVar6() throws JannovarException {
 	byte chr = 1;
 	int pos = 19595137;
 	String ref = "C";
@@ -294,7 +294,7 @@ public class NonsynonymousAnnotationTest implements Constants {
  * chr1:19596124C>T
  *</P>
  */
-@Test public void testNonsynVar7() throws AnnotationException  {
+@Test public void testNonsynVar7() throws JannovarException {
 	byte chr = 1;
 	int pos = 19596124;
 	String ref = "C";
@@ -323,7 +323,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
 
  *</P>
  */
-@Test public void testNonsynVar8() throws AnnotationException  {
+@Test public void testNonsynVar8() throws JannovarException {
 	byte chr = 1;
 	int pos = 21573855;
 	String ref = "G";
@@ -348,7 +348,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * chr1:22050649C>A
  *</P>
  */
-@Test public void testNonsynVar9() throws AnnotationException  {
+@Test public void testNonsynVar9() throws JannovarException {
 	byte chr = 1;
 	int pos = 22050649;
 	String ref = "C";
@@ -372,7 +372,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * chr1:22846709G>A
  *</P>
  */
-@Test public void testNonsynVar10() throws AnnotationException  {
+@Test public void testNonsynVar10() throws JannovarException {
 	byte chr = 1;
 	int pos = 22846709;
 	String ref = "G";
@@ -395,7 +395,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * chr1:24180962T>C
  *</P>
  */
-@Test public void testNonsynVar12() throws AnnotationException  {
+@Test public void testNonsynVar12() throws JannovarException {
 	byte chr = 1;
 	int pos = 24180962;
 	String ref = "T";
@@ -419,7 +419,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * chr1:26517794A>G
  *</P>
  */
-@Test public void testNonsynVar13() throws AnnotationException  {
+@Test public void testNonsynVar13() throws JannovarException {
 	byte chr = 1;
 	int pos = 26517794;
 	String ref = "A";
@@ -443,7 +443,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * chr1:33549535A>G
  *</P>
  */
-@Test public void testNonsynVar14() throws AnnotationException  {
+@Test public void testNonsynVar14() throws JannovarException {
 	byte chr = 1;
 	int pos = 33549535;
 	String ref = "A";
@@ -467,7 +467,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * chr2:15674686T>C
  *</P>
  */
-@Test public void testNonsynVar59() throws AnnotationException  {
+@Test public void testNonsynVar59() throws JannovarException {
 	byte chr = 2;
 	int pos = 15674686;
 	String ref = "T";
@@ -494,7 +494,7 @@ but was:<....1013C>T:p.T338I,uc0[10odl.1:exon9:c.1022C>T:p.T341I,uc001bek.2:exon
  * Note that LOC375190 was changed to FAM228B (GeneID:375190)
  *</P>
  */
-@Test public void testNonsynVar60() throws AnnotationException  {
+@Test public void testNonsynVar60() throws JannovarException {
 	byte chr = 2;
 	int pos = 24390517;
 	String ref = "G";
@@ -523,7 +523,7 @@ Therefore, the "nonsynonymous" variant "wins", togehther with an error message. 
 
  *</P>
  */
-@Test public void testNonsynVar61() throws AnnotationException  {
+@Test public void testNonsynVar61() throws JannovarException {
 	byte chr = 2;
 	int pos = 27303755;
 	String ref = "A";
@@ -532,7 +532,7 @@ Therefore, the "nonsynonymous" variant "wins", togehther with an error message. 
 	if (c==null) {
 	    Assert.fail("Could not identify chromosome \"" + chr + "\"");
 	} else {
-	    AnnotationList ann =c.getAnnotationList(pos,ref,alt); 
+	    AnnotationList ann =c.getAnnotationList(pos,ref,alt);
 	    VariantType varType = ann.getVariantType();
 	    Assert.assertEquals(VariantType.MISSENSE,varType);
 	    String annot = ann.getVariantAnnotation();

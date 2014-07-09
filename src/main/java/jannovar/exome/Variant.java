@@ -8,6 +8,7 @@ import jannovar.common.Constants;
 import jannovar.common.Genotype;
 import jannovar.common.VariantType;
 import jannovar.exception.AnnotationException;
+import jannovar.exception.JannovarException;
 import jannovar.genotype.GenotypeCall;
 import jannovar.reference.Chromosome;
 
@@ -62,7 +63,7 @@ public class Variant implements Comparable<Variant>, Constants {
      * @param c The Chromosome object representing the location of the variant.
      * @throws jannovar.exception.AnnotationException
      */
-    public void annotate(Chromosome c) throws AnnotationException {
+    public void annotate(Chromosome c) throws AnnotationException, JannovarException {
 	this.annotList  = c.getAnnotationList(this.position,this.ref,this.alt);
     }
    

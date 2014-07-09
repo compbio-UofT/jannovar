@@ -233,7 +233,20 @@ public class VCFReader {
     	this.formatLines=new ArrayList<String>();
     	this.infoLines=new ArrayList<String>();
     	this.contigLines=new ArrayList<String>();
-    	this.unparsable_line_list = new ArrayList<String>();
+    	this.unparsable_line_list = new ArrayList<String>(){
+
+            private boolean truncated = false;
+            @Override
+            public boolean add(String e) {
+                if(this.size() < 1000){
+                    return super.add(e); 
+                }else if(!truncated){
+                    truncated = true;
+                    super.add("List truncated...");
+                }
+                return true;
+            }
+        };
     	this.sample_name_list = new  ArrayList<String>();
     	this.total_number_of_variants = 0;
     	this.unparsableChromosomes = new HashSet<String>();

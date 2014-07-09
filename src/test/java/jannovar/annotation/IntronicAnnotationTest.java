@@ -48,7 +48,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar4() throws AnnotationException {
+	public void testIntronicVar4() throws JannovarException {
 		byte chr = 1;
 		int pos = 909768;
 		String ref = "A";
@@ -100,7 +100,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar42() throws AnnotationException {
+	public void testIntronicVar42() throws JannovarException {
 		byte chr = 12;
 		int pos = 48876500;
 		String ref = "C";
@@ -126,7 +126,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar43() throws AnnotationException {
+	public void testIntronicVar43() throws JannovarException {
 		byte chr = 12;
 		int pos = 48877000;
 		String ref = "C";
@@ -152,7 +152,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar44() throws AnnotationException {
+	public void testIntronicVar44() throws JannovarException {
 		byte chr = 12;
 		int pos = 48888800;
 		String ref = "C";
@@ -178,7 +178,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar45() throws AnnotationException {
+	public void testIntronicVar45() throws JannovarException {
 		byte chr = 12;
 		int pos = 48889800;
 		String ref = "T";
@@ -204,7 +204,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar46() throws AnnotationException {
+	public void testIntronicVar46() throws JannovarException {
 		byte chr = 12;
 		int pos = 48880600;
 		String ref = "T";
@@ -230,7 +230,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar47() throws AnnotationException {
+	public void testIntronicVar47() throws JannovarException {
 		byte chr = 12;
 		int pos = 48882700;
 		String ref = "C";
@@ -256,7 +256,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar50() throws AnnotationException {
+	public void testIntronicVar50() throws JannovarException {
 		byte chr = 1;
 		int pos = 222762000;
 		String ref = "A";
@@ -282,7 +282,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar51() throws AnnotationException {
+	public void testIntronicVar51() throws JannovarException {
 		byte chr = 1;
 		int pos = 222763000;
 		String ref = "T";
@@ -308,7 +308,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar52() throws AnnotationException {
+	public void testIntronicVar52() throws JannovarException {
 		byte chr = 1;
 		int pos = 222731700;
 		String ref = "A";
@@ -334,7 +334,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar53() throws AnnotationException {
+	public void testIntronicVar53() throws JannovarException {
 		byte chr = 1;
 		int pos = 222731900;
 		String ref = "T";
@@ -360,7 +360,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar54() throws AnnotationException {
+	public void testIntronicVar54() throws JannovarException {
 		byte chr = 1;
 		int pos = 222736700;
 		String ref = "A";
@@ -386,7 +386,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar55() throws AnnotationException {
+	public void testIntronicVar55() throws JannovarException {
 		byte chr = 1;
 		int pos = 222737200;
 		String ref = "A";
@@ -412,7 +412,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar60() throws AnnotationException {
+	public void testIntronicVar60() throws JannovarException {
 		byte chr = 20;
 		int pos = 25944000;
 		String ref = "C";
@@ -438,7 +438,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar61() throws AnnotationException {
+	public void testIntronicVar61() throws JannovarException {
 		byte chr = 20;
 		int pos = 25945000;
 		String ref = "C";
@@ -464,7 +464,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar62() throws AnnotationException {
+	public void testIntronicVar62() throws JannovarException {
 		byte chr = 17;
 		int pos = 36361000;
 		String ref = "A";
@@ -490,7 +490,7 @@ public class IntronicAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testIntronicVar63() throws AnnotationException {
+	public void testIntronicVar63() throws JannovarException {
 		byte chr = 17;
 		int pos = 36359600;
 		String ref = "G";
@@ -528,7 +528,7 @@ public class IntronicAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testIntronicVar70() throws AnnotationException {
+	public void testIntronicVar70() throws JannovarException {
 		byte chr = 1;
 		int pos = 6204222;
 		String ref = "C";

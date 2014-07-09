@@ -4,6 +4,7 @@ import jannovar.exception.IntervalTreeException;
 
 import java.util.ArrayList;
 
+import jannovar.exception.JannovarException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -15,7 +16,7 @@ import org.junit.Test;
 public class NodeTest {
 
 	/** Median should be 3,4,5,17,19,20,21,55,90,100 => 19? */
-	private ArrayList<Interval<String>> createIntervalList1() throws IntervalTreeException {
+	private ArrayList<Interval<String>> createIntervalList1() throws JannovarException {
 		Interval<String> i1 = new Interval<String>(3, 100, "A");
 		Interval<String> i2 = new Interval<String>(7, 90, "B");
 		Interval<String> i3 = new Interval<String>(4, 55, "C");
@@ -37,7 +38,7 @@ public class NodeTest {
 	}
 
 	@Test
-	public void testNodeConstruction1() throws IntervalTreeException {
+	public void testNodeConstruction1() throws JannovarException {
 		ArrayList<Interval<String>> lst = createIntervalList1();
 		Node<String> n = new Node<String>(lst, new LeftComparator(), new RightComparator());
 		Integer m = n.getMedian();

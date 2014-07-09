@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import jannovar.common.Disease;
 import jannovar.common.Genotype;
+import jannovar.exception.JannovarException;
 import jannovar.exome.Variant;
 import jannovar.exception.PedParseException;
 import jannovar.genotype.GenotypeCall;
@@ -80,7 +81,7 @@ public class PedigreeARTest {
     /**
      * Test one compatible HOMOZYGOUS_ALT variant plus two irrelevant second variants.
      */
-    @Test public void testARinheritance1() {
+    @Test public void testARinheritance1() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
         Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -123,7 +124,7 @@ public class PedigreeARTest {
      * Test one compatible HOMOZYGOUS_ALT variant plus two irrelevant second variants.
      * Does not have a compound het
      */
-    @Test public void testARinheritance1CompoundHEt() {
+    @Test public void testARinheritance1CompoundHEt() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
         Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -144,7 +145,7 @@ public class PedigreeARTest {
      /**
      * Test one compatible HOMOZYGOUS_ALT variant plus two irrelevant second variants.
      */
-    @Test public void testARinheritance3() {
+    @Test public void testARinheritance3() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
 	Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,
 					   Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -186,7 +187,7 @@ public class PedigreeARTest {
      * Test one compatible HOMOZYGOUS_ALT variant plus two irrelevant second variants.
      * Does not have compound het
      */
-    @Test public void testARinheritance3CompoundHet() {
+    @Test public void testARinheritance3CompoundHet() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
 	Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,
 					   Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -207,7 +208,7 @@ public class PedigreeARTest {
      /**
      * Test one compatible HOMOZYGOUS_ALT variant plus two irrelevant second variants.
      */
-    @Test public void testARinheritance4() {
+    @Test public void testARinheritance4() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
 	Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -256,7 +257,7 @@ public class PedigreeARTest {
      *ped1 dau2 father mother 2 1
      Here, mg1 is paternal het, mg2 is maternal het
      */
-    @Test public void testARinheritanceCompoundHet1() {
+    @Test public void testARinheritanceCompoundHet1() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
 	Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HOMOZYGOUS_REF,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -283,7 +284,7 @@ public class PedigreeARTest {
      *ped1 dau2 father mother 2 1
      Here, mg1 is paternal het, mg2 is maternal het
      */
-    @Test public void testARinheritanceCompoundHet1special() {
+    @Test public void testARinheritanceCompoundHet1special() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
 	Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HOMOZYGOUS_REF,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -311,7 +312,7 @@ public class PedigreeARTest {
      * Here, mg1 is paternal het, mg2 is maternal het, but one of the unaffecteds is compound het (dau2)
      * Thus, the variant is not compatible!
      */
-    @Test public void testARinheritanceCompoundHet2() {
+    @Test public void testARinheritanceCompoundHet2() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
         Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HOMOZYGOUS_REF,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);
@@ -335,7 +336,7 @@ public class PedigreeARTest {
      * Here, mg1 is paternal het, mg2 is maternal het, but one of the unaffecteds is compound het (dau2)
      * Thus, the variant is not compatible!
      */
-    @Test public void testARinheritanceCompoundHet2special() {
+    @Test public void testARinheritanceCompoundHet2special() throws JannovarException {
 	ArrayList<Variant> lst = new ArrayList<Variant>();
         Variant mg1 = constructGenotypeCall(Genotype.HETEROZYGOUS,Genotype.HOMOZYGOUS_REF,Genotype.HETEROZYGOUS,
                                                         Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS,Genotype.HETEROZYGOUS);

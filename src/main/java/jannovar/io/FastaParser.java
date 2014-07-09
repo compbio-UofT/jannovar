@@ -3,6 +3,7 @@
  */
 package jannovar.io;
 
+import jannovar.exception.JannovarException;
 import jannovar.reference.TranscriptModel;
 
 import java.io.BufferedReader;
@@ -48,7 +49,7 @@ public abstract class FastaParser {
 	 * Parse the mRNA sequences and thereby add these to the {@link TranscriptModel}s.
      * @return list of sequence annotated {@link TranscriptModel}s
 	 */
-	public ArrayList<TranscriptModel> parse(){
+	public ArrayList<TranscriptModel> parse() throws JannovarException{
 		BufferedReader in = null;
 		String str;
 		try {
@@ -82,7 +83,7 @@ public abstract class FastaParser {
 	/**
 	 * Adds the sequence to the corresponding {@link TranscriptModel}.
 	 */
-	private void addSequenceToModel() {
+	private void addSequenceToModel() throws JannovarException{
 		Integer idx;
 		
 		if((idx = transcript2index.get(accession)) != null){

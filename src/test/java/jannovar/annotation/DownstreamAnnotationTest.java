@@ -68,7 +68,7 @@ public class DownstreamAnnotationTest implements Constants {
  * chr1:949925C>T
  *</P>
  */
-@Test public void testDownstreamVar1() throws AnnotationException  {
+@Test public void testDownstreamVar1() throws JannovarException {
 	byte chr = 1;
 	int pos = 949925;
 	String ref = "C";
@@ -97,7 +97,7 @@ TARDBP: chr1:11,072,679-11,085,549
 11085549 - 11086098 = -549
  *</P>
  */
-@Test public void testDownstreamVar2() throws AnnotationException  {
+@Test public void testDownstreamVar2() throws JannovarException {
 	byte chr = 1;
 	int pos = 11086098;
 	String ref = "-";
@@ -120,7 +120,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr1:108113510G>T
  *</P>
  */
-@Test public void testDownstreamVar4() throws AnnotationException  {
+@Test public void testDownstreamVar4() throws JannovarException {
 	byte chr = 1;
 	int pos = 108113510;
 	String ref = "G";
@@ -148,7 +148,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr1:153362507A>G
  *</P>
  */
-@Test public void testDownstreamVar6() throws AnnotationException  {
+@Test public void testDownstreamVar6() throws JannovarException {
 	byte chr = 1;
 	int pos = 153362507;
 	String ref = "A";
@@ -175,7 +175,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr1:158389693C>T
  *</P>
  */
-@Test public void testDownstreamVar7() throws AnnotationException  {
+@Test public void testDownstreamVar7() throws JannovarException {
 	byte chr = 1;
 	int pos = 158389693;
 	String ref = "C";
@@ -203,7 +203,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr1:228109137A>G
  *</P>
  */
-@Test public void testDownstreamVar9() throws AnnotationException  {
+@Test public void testDownstreamVar9() throws JannovarException {
 	byte chr = 1;
 	int pos = 228109137;
 	String ref = "A";
@@ -231,7 +231,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr1:248801550C>T
  *</P>
  */
-@Test public void testDownstreamVar13() throws AnnotationException  {
+@Test public void testDownstreamVar13() throws JannovarException {
 	byte chr = 1;
 	int pos = 248801550;
 	String ref = "C";
@@ -260,7 +260,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr2:96521455A>G
  *</P>
  */
-@Test public void testDownstreamVar24() throws AnnotationException  {
+@Test public void testDownstreamVar24() throws JannovarException {
 	byte chr = 2;
 	int pos = 96521455;
 	String ref = "A";
@@ -287,7 +287,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr2:96521548G>A
  *</P>
  */
-@Test public void testDownstreamVar25() throws AnnotationException  {
+@Test public void testDownstreamVar25() throws JannovarException {
 	byte chr = 2;
 	int pos = 96521548;
 	String ref = "G";
@@ -318,7 +318,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr8:21895146A>G
  *</P>
  */
-@Test public void testDownstreamVar56() throws AnnotationException  {
+@Test public void testDownstreamVar56() throws JannovarException {
 	byte chr = 8;
 	int pos = 21895146;
 	String ref = "A";
@@ -343,7 +343,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr11:5141980A>G
  *</P>
  */
-@Test public void testDownstreamVar73() throws AnnotationException  {
+@Test public void testDownstreamVar73() throws JannovarException {
 	byte chr = 11;
 	int pos = 5141980;
 	String ref = "A";
@@ -371,7 +371,7 @@ TARDBP: chr1:11,072,679-11,085,549
  * chr11:59132882A>G
  *</P>
  */
-@Test public void testDownstreamVar84() throws AnnotationException  {
+@Test public void testDownstreamVar84() throws JannovarException {
 	byte chr = 11;
 	int pos = 59132882;
 	String ref = "A";

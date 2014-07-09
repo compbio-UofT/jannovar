@@ -64,7 +64,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSpliceVar7() throws AnnotationException {
+	public void testSpliceVar7() throws JannovarException {
 		byte chr = 1;
 		int pos = 44125967;
 		String ref = "A";
@@ -89,7 +89,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSpliceVar9() throws AnnotationException {
+	public void testSpliceVar9() throws JannovarException {
 		byte chr = 1;
 		int pos = 67242087;
 		String ref = "G";
@@ -112,7 +112,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testSpliceVar2b() throws AnnotationException {
+	public void testSpliceVar2b() throws JannovarException {
 		byte chr = 1;
 		int pos = 5935162;
 		String ref = "A";
@@ -130,7 +130,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar3b() throws AnnotationException {
+	public void testSpliceVar3b() throws JannovarException {
 		byte chr = 1;
 		int pos = 35917393;
 		String ref = "C";
@@ -148,7 +148,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar4b() throws AnnotationException {
+	public void testSpliceVar4b() throws JannovarException {
 		byte chr = 1;
 		int pos = 44125967;
 		String ref = "A";
@@ -166,7 +166,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar1g() throws AnnotationException {
+	public void testSpliceVar1g() throws JannovarException {
 		byte chr = 1;
 		int pos = 155348181;
 		String ref = "C";
@@ -184,7 +184,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar1h() throws AnnotationException {
+	public void testSpliceVar1h() throws JannovarException {
 		byte chr = 1;
 		int pos = 155348070;
 		String ref = "A";
@@ -207,7 +207,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * @throws AnnotationException
 	 */
 	@Test
-	public void testSpliceVar1h2() throws AnnotationException {
+	public void testSpliceVar1h2() throws JannovarException {
 		byte chr = 1;
 		int pos = 155348069;
 		String ref = "T";
@@ -230,7 +230,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * @throws AnnotationException
 	 */
 	@Test
-	public void testSpliceVar1h3() throws AnnotationException {
+	public void testSpliceVar1h3() throws JannovarException {
 		byte chr = 1;
 		int pos = 155348072;
 		String ref = "C";
@@ -253,7 +253,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * @throws AnnotationException
 	 */
 	@Test
-	public void testSpliceVar1h4() throws AnnotationException {
+	public void testSpliceVar1h4() throws JannovarException {
 		byte chr = 1;
 		int pos = 155348068;
 		String ref = "GTA";
@@ -271,7 +271,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar2h() throws AnnotationException {
+	public void testSpliceVar2h() throws JannovarException {
 		byte chr = 1;
 		int pos = 156704287;
 		String ref = "T";
@@ -289,7 +289,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar3h() throws AnnotationException {
+	public void testSpliceVar3h() throws JannovarException {
 		byte chr = 1;
 		int pos = 158064182;
 		String ref = "T";
@@ -307,7 +307,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar4h() throws AnnotationException {
+	public void testSpliceVar4h() throws JannovarException {
 		byte chr = 1;
 		int pos = 212964870;
 		String ref = "A";
@@ -325,7 +325,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar5h() throws AnnotationException {
+	public void testSpliceVar5h() throws JannovarException {
 		byte chr = 1;
 		int pos = 247419509;
 		String ref = "T";
@@ -348,7 +348,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * was:<MTA3(uc002rs[o.1:exon7:c.214-2A >G,uc002rsp.1:exon6]:c.214-2A>G,uc002rsq...>
 	 */
 	@Test
-	public void testSpliceVar6h() throws AnnotationException {
+	public void testSpliceVar6h() throws JannovarException {
 		byte chr = 2;
 		int pos = 42871265;
 		String ref = "A";
@@ -366,7 +366,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar7h() throws AnnotationException {
+	public void testSpliceVar7h() throws JannovarException {
 		byte chr = 2;
 		int pos = 85571472;
 		String ref = "C";
@@ -384,7 +384,7 @@ public class SpliceAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testSpliceVar8h() throws AnnotationException {
+	public void testSpliceVar8h() throws JannovarException {
 		byte chr = 2;
 		int pos = 85662248;
 		String ref = "T";
@@ -408,7 +408,7 @@ public class SpliceAnnotationTest implements Constants {
 	 * -1G>A,uc002tfm.4:exon7:c.523-1G>A,uc010ywx .2:exon7:c.523-1G>A,uc010fjv.1]:exon7:c.523-1G>A)>
 	 */
 	@Test
-	public void testSpliceVar9h() throws AnnotationException {
+	public void testSpliceVar9h() throws JannovarException {
 		byte chr = 2;
 		int pos = 110926131;
 		String ref = "C";

@@ -14,6 +14,7 @@ import jannovar.annotation.SpliceAnnotation;
 import jannovar.annotation.UTRAnnotation;
 import jannovar.common.VariantType;
 import jannovar.exception.AnnotationException;
+import jannovar.exception.JannovarException;
 import jannovar.interval.Interval;
 import jannovar.interval.IntervalTree;
 
@@ -127,7 +128,7 @@ public class Chromosome {
 	 *         described by the object (often just one annotation, but potentially multiple ones).
 	 * @throws jannovar.exception.AnnotationException
 	 */
-	public AnnotationList getAnnotationList(int position, String ref, String alt) throws AnnotationException {
+	public AnnotationList getAnnotationList(int position, String ref, String alt) throws AnnotationException, JannovarException {
 
 		/* prepare and adapt for duplications (e.g. get rid of the repeated reference base in insertions) */
 		if (ref.length() < alt.length() && alt.substring(0, ref.length()).equals(ref)) {
@@ -194,7 +195,7 @@ public class Chromosome {
 	 * @param rightNeighbor
 	 *            The transcript that is closest to the variant on the right
 	 */
-	public void createIntergenicAnnotations(int start, int end, TranscriptModel leftNeighbor, TranscriptModel rightNeighbor) {
+	public void createIntergenicAnnotations(int start, int end, TranscriptModel leftNeighbor, TranscriptModel rightNeighbor) throws JannovarException {
 
 		/* ***************************************************************************************** *
 		 * The following code block is executed if the variant has not hit a genic region yet and    *
@@ -832,7 +833,7 @@ public class Chromosome {
 	 *            A list of all TranscriptModels for the entire genome
 	 * @return a Map of Chromosome objects with all 22+2+M chromosomes.
 	 */
-	public static HashMap<Byte, Chromosome> constructChromosomeMapWithIntervalTree(ArrayList<TranscriptModel> kgList) {
+	public static HashMap<Byte, Chromosome> constructChromosomeMapWithIntervalTree(ArrayList<TranscriptModel> kgList) throws JannovarException {
 		HashMap<Byte, Chromosome> chromosomeMap = new HashMap<Byte, Chromosome>();
 		/* 1. First sort the TranscriptModel objects by Chromosome. */
 		HashMap<Byte, ArrayList<Interval<TranscriptModel>>> chrMap = new HashMap<Byte, ArrayList<Interval<TranscriptModel>>>();

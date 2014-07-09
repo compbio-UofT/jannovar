@@ -43,7 +43,7 @@ public class UTR5AnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testUTR3VarByHand1() throws AnnotationException {
+	public void testUTR3VarByHand1() throws JannovarException {
 		byte chr = 4;
 		int pos = 20620683;
 		String ref = "G";
@@ -66,7 +66,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar392() throws AnnotationException {
+	public void testNcRnaExonicVar392() throws JannovarException {
 		byte chr = 13;
 		int pos = 76445189;
 		String ref = "A";
@@ -89,7 +89,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var39() throws AnnotationException {
+	public void testUTR5Var39() throws JannovarException {
 		byte chr = 1;
 		int pos = 150483840;
 		String ref = "C";
@@ -112,7 +112,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var83() throws AnnotationException {
+	public void testUTR5Var83() throws JannovarException {
 		byte chr = 1;
 		int pos = 245318688;
 		String ref = "C";
@@ -135,7 +135,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var84() throws AnnotationException {
+	public void testUTR5Var84() throws JannovarException {
 		byte chr = 1;
 		int pos = 248058879;
 		String ref = "A";
@@ -158,7 +158,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var94() throws AnnotationException {
+	public void testUTR5Var94() throws JannovarException {
 		byte chr = 2;
 		int pos = 73899613;
 		String ref = "T";
@@ -181,7 +181,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var119() throws AnnotationException {
+	public void testUTR5Var119() throws JannovarException {
 		byte chr = 2;
 		int pos = 237150166;
 		String ref = "A";
@@ -204,7 +204,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var248() throws AnnotationException {
+	public void testUTR5Var248() throws JannovarException {
 		byte chr = 6;
 		int pos = 108093580;
 		String ref = "C";
@@ -227,7 +227,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var310() throws AnnotationException {
+	public void testUTR5Var310() throws JannovarException {
 		byte chr = 9;
 		int pos = 33933705;
 		String ref = "A";
@@ -250,7 +250,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var318() throws AnnotationException {
+	public void testUTR5Var318() throws JannovarException {
 		byte chr = 9;
 		int pos = 114521630;
 		String ref = "A";
@@ -273,7 +273,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var370() throws AnnotationException {
+	public void testUTR5Var370() throws JannovarException {
 		byte chr = 11;
 		int pos = 65793878;
 		String ref = "A";
@@ -296,7 +296,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var392() throws AnnotationException {
+	public void testUTR5Var392() throws JannovarException {
 		byte chr = 12;
 		int pos = 8377448;
 		String ref = "T";
@@ -319,7 +319,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var397() throws AnnotationException {
+	public void testUTR5Var397() throws JannovarException {
 		byte chr = 12;
 		int pos = 49218812;
 		String ref = "-";
@@ -341,7 +341,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * annovar: TUBA1B
 	 */
 	@Test
-	public void testUTR5Var399() throws AnnotationException {
+	public void testUTR5Var399() throws JannovarException {
 		byte chr = 12;
 		int pos = 49525089;
 		String ref = "CT";
@@ -364,7 +364,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var509() throws AnnotationException {
+	public void testUTR5Var509() throws JannovarException {
 		byte chr = 17;
 		int pos = 4544983;
 		String ref = "-";
@@ -387,7 +387,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var536() throws AnnotationException {
+	public void testUTR5Var536() throws JannovarException {
 		byte chr = 17;
 		int pos = 61565990;
 		String ref = "G";
@@ -410,7 +410,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var618() throws AnnotationException {
+	public void testUTR5Var618() throws JannovarException {
 		byte chr = 22;
 		int pos = 26862153;
 		String ref = "C";
@@ -435,7 +435,7 @@ public class UTR5AnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testUTR5Var627() throws AnnotationException {
+	public void testUTR5Var627() throws JannovarException {
 		byte chr = X_CHROMOSOME;
 		int pos = 7811234;
 		String ref = "AGCTGCG";

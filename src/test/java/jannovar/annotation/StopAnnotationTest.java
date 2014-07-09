@@ -48,7 +48,7 @@ public class StopAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testStopVar1() throws AnnotationException {
+	public void testStopVar1() throws JannovarException {
 		byte chr = 1;
 		int pos = 212799882;
 		String ref = "A";
@@ -71,7 +71,7 @@ public class StopAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testStopVar4() throws AnnotationException {
+	public void testStopVar4() throws JannovarException {
 		byte chr = 6;
 		int pos = 30229463;
 		String ref = "G";
@@ -108,7 +108,7 @@ public class StopAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testStopVar7() throws AnnotationException {
+	public void testStopVar7() throws JannovarException {
 		byte chr = 11;
 		int pos = 48286231;
 		String ref = "T";
@@ -132,7 +132,7 @@ public class StopAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testStopLossVar1() throws AnnotationException {
+	public void testStopLossVar1() throws JannovarException {
 		byte chr = 2;
 		int pos = 172180771;
 		String ref = "A";
@@ -156,7 +156,7 @@ public class StopAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testStopLossVar2() throws AnnotationException {
+	public void testStopLossVar2() throws JannovarException {
 		byte chr = 7;
 		int pos = 34889222;
 		String ref = "T";

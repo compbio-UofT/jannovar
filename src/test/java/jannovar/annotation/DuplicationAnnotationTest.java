@@ -95,7 +95,7 @@ public class DuplicationAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testInsertionVar29y() throws AnnotationException, VCFParseException {
+	public void testInsertionVar29y() throws JannovarException {
 		String s = "4	190878559	.	A	AA	100	PASS	QD=11.71;	GT:GQ	0/1:99	0/0:99	0/1:99	0/0:99	0/1:99";
 		VCFLine line = new VCFLine(s);
 
@@ -125,7 +125,7 @@ public class DuplicationAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testDuplicationVar9test() throws AnnotationException, VCFParseException {
+	public void testDuplicationVar9test() throws JannovarException {
 		String s = "9	137968918	.	A	AAGA	100	PASS	QD=11.71;	GT:GQ	0/1:99	0/0:99	0/1:99	0/0:99	0/1:99";
 		VCFLine line = new VCFLine(s);
 		Variant v = line.toVariant();

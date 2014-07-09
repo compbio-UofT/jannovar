@@ -11,6 +11,7 @@ import jannovar.interval.LeftComparator;
 import jannovar.interval.RightComparator;
 
 import jannovar.exception.IntervalTreeException;
+import jannovar.exception.JannovarException;
 
 import org.junit.Test;
 import org.junit.AfterClass;
@@ -25,7 +26,7 @@ import org.junit.Assert;
 public class IntervalTest {
     
     
-    @Test public void testIntervalConstruction1()  throws IntervalTreeException
+    @Test public void testIntervalConstruction1()  throws JannovarException
     {
 	Interval<String> ivl = new Interval<String>(5,6,"test");
         Assert.assertEquals(5,ivl.getLow());
@@ -33,7 +34,7 @@ public class IntervalTest {
         Assert.assertEquals("test",ivl.getValue());
     }
     
-    @Test public void testIntervalConstruction2()  throws IntervalTreeException
+    @Test public void testIntervalConstruction2()  throws JannovarException
     {
 	
         Byte b = new Byte("4");
@@ -43,7 +44,7 @@ public class IntervalTest {
         Assert.assertEquals(b,ivl.getValue());
     }
     
-    @Test public void testIntervalConstruction3()  throws IntervalTreeException
+    @Test public void testIntervalConstruction3()  throws JannovarException
     {
 	Integer h = new Integer(100);
         
@@ -61,7 +62,7 @@ public class IntervalTest {
 	public void shouldChokeOnIntervalCTOR() throws IntervalTreeException {
 	Interval<String> ivl = new Interval(70,50,"badstring");
 	}*/
-    @Test public void testLeftCompare() throws IntervalTreeException {
+    @Test public void testLeftCompare() throws JannovarException {
         Interval<String> i1 = new Interval<String>(3,100,"A");
         Interval<String> i2 = new Interval<String>(7,90,"B");
         Interval<String> i3 = new Interval<String>(4,55,"C");
@@ -82,7 +83,7 @@ public class IntervalTest {
     }
 
 
-    @Test public void testRightCompare() throws IntervalTreeException {
+    @Test public void testRightCompare() throws JannovarException {
         Interval<String> i1 = new Interval<String>(3,100,"A");
         Interval<String> i2 = new Interval<String>(7,200,"B");
         Interval<String> i3 = new Interval<String>(4,590,"C");

@@ -9,7 +9,10 @@ import jannovar.exception.PedParseException;
 import jannovar.genotype.GenotypeCall;
 import jannovar.common.Disease;
 import jannovar.common.Genotype;
+import jannovar.exception.JannovarException;
 import jannovar.exome.Variant;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * Models a single-family pedigree in an whole-exome sequencing project.
@@ -51,6 +54,7 @@ import jannovar.exome.Variant;
  * @version 0.21 (27 December, 2013)
  */
 public class Pedigree {
+    private static final Log LOG = LogFactory.getLog(Pedigree.class.getName());
     /**
      * The identifier of the family in the PED file.
      */
@@ -697,7 +701,7 @@ public class Pedigree {
      * @param varList A list of variants (usually all variants in some gene).
      * @return <code>true</code> if gene is autosomal recessive inheritance compatible
      */
-    public boolean isCompatibleWithAutosomalRecessiveCompoundHet(ArrayList<Variant> varList) {
+    public boolean isCompatibleWithAutosomalRecessiveCompoundHet(ArrayList<Variant> varList) throws JannovarException {
 	if (this.isSingleSample) {
 	    int n_het = 0;
 	    for (Variant v : varList) {
@@ -727,11 +731,12 @@ public class Pedigree {
 		    maternal.add(multiGT);
 		else {
 		    /* This can never happen, it is just a sanity check! */
-		    System.err.println("ERROR: Neither mother nor father het with at least one parent being het");
-		    System.exit(1);
+		    String msg = "ERROR: Neither mother nor father het with at least one parent being het";
+		    LOG.error(msg);
+		    throw new JannovarException(msg);
 		}
 	    }
-	}  
+	}
 	/* When we get here, we have (potentially empty) lists of GenotypeCalls that are
 	   heterozygous in the father or mother. If there is a combination of maternal and paternal
 	   genotypes that could be a valid compound heterozygous mutation, then return true!
@@ -762,7 +767,7 @@ public class Pedigree {
      * @param varList A list of {@link Variant}s (usually all variants in some gene).
      * @return 
      */
-    public boolean isCompatibleWithAutosomalRecessive(ArrayList<Variant> varList) {
+    public boolean isCompatibleWithAutosomalRecessive(ArrayList<Variant> varList) throws JannovarException{
 	if (this.isSingleSample) {
 	    return singleSampleCompatibleWithAutosomalRecessive(varList);
 	}
@@ -806,11 +811,12 @@ public class Pedigree {
 		    maternal.add(multiGT);
 		else {
 		    /* This can never happen, it is just a sanity check! */
-		    System.err.println("ERROR: Neither mother nor father het with at least one parent being het");
-		    System.exit(1);
+		    String msg = "ERROR: Neither mother nor father het with at least one parent being het";
+		    LOG.error(msg);
+		    throw new JannovarException(msg);
 		}
 	    }
-	}  
+	}
 	/* When we get here, we have (potentially empty) lists of GenotypeCalls that are
 	   heterozygous in the father or mother. If there is a combination of maternal and paternal
 	   genotypes that could be a valid compound heterozygous mutation, then return true!

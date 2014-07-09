@@ -78,7 +78,7 @@ public class BlockSubAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testBlocSub2() throws AnnotationException {
+	public void testBlocSub2() throws JannovarException {
 		byte chr = 15;
 		int pos = 74536400;
 		String ref = "TAAGAAGGAGACCATCA";
@@ -96,7 +96,7 @@ public class BlockSubAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testBlocSub3() throws AnnotationException {
+	public void testBlocSub3() throws JannovarException {
 		byte chr = 11;
 		int pos = 5475431;
 		String ref = "TCAACA";
@@ -123,7 +123,7 @@ public class BlockSubAnnotationTest implements Constants {
 	 */
 
 	@Test
-	public void testBlocSub4() throws AnnotationException {
+	public void testBlocSub4() throws JannovarException {
 		byte chr = 5;
 		int pos = 156479565;
 		String ref = "AGTCGT";
@@ -141,7 +141,7 @@ public class BlockSubAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testBlocSubByHand() throws AnnotationException {
+	public void testBlocSubByHand() throws JannovarException {
 		byte chr = 5;
 		int pos = 156479565;
 		String ref = "AGTCGT";

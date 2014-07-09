@@ -43,7 +43,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	}
 
 	@Test
-	public void testUTR3VarByHand1() throws AnnotationException {
+	public void testUTR3VarByHand1() throws JannovarException {
 		byte chr = 4;
 		int pos = 20620683;
 		String ref = "G";
@@ -68,7 +68,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testIntronicVar11571() throws AnnotationException {
+	public void testIntronicVar11571() throws JannovarException {
 		byte chr = 12;
 		int pos = 48883012;
 		String ref = "T";
@@ -91,7 +91,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar33() throws AnnotationException {
+	public void testNcRnaExonicVar33() throws JannovarException {
 		byte chr = 1;
 		int pos = 173429995;
 		String ref = "G";
@@ -114,7 +114,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar68() throws AnnotationException {
+	public void testNcRnaExonicVar68() throws JannovarException {
 		byte chr = 2;
 		int pos = 90458648;
 		String ref = "T";
@@ -137,7 +137,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar155() throws AnnotationException {
+	public void testNcRnaExonicVar155() throws JannovarException {
 		byte chr = 5;
 		int pos = 159912418;
 		String ref = "C";
@@ -160,7 +160,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar165() throws AnnotationException {
+	public void testNcRnaExonicVar165() throws JannovarException {
 		byte chr = 6;
 		int pos = 31803065;
 		String ref = "T";
@@ -183,7 +183,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar281() throws AnnotationException {
+	public void testNcRnaExonicVar281() throws JannovarException {
 		byte chr = 9;
 		int pos = 97329738;
 		String ref = "-";
@@ -206,7 +206,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar399() throws AnnotationException {
+	public void testNcRnaExonicVar399() throws JannovarException {
 		byte chr = 14;
 		int pos = 73079294;
 		String ref = "-";
@@ -229,7 +229,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar518() throws AnnotationException {
+	public void testNcRnaExonicVar518() throws JannovarException {
 		byte chr = 17;
 		int pos = 36353761;
 		String ref = "C";
@@ -252,7 +252,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar530() throws AnnotationException {
+	public void testNcRnaExonicVar530() throws JannovarException {
 		byte chr = 18;
 		int pos = 19408950;
 		String ref = "C";
@@ -275,7 +275,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar560() throws AnnotationException {
+	public void testNcRnaExonicVar560() throws JannovarException {
 		byte chr = 20;
 		int pos = 25829352;
 		String ref = "T";
@@ -298,7 +298,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar649() throws AnnotationException {
+	public void testNcRnaExonicVar649() throws JannovarException {
 		byte chr = X_CHROMOSOME;
 		int pos = 70711958;
 		String ref = "T";
@@ -321,7 +321,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar651() throws AnnotationException {
+	public void testNcRnaExonicVar651() throws JannovarException {
 		byte chr = Y_CHROMOSOME;
 		int pos = 8657215;
 		String ref = "C";
@@ -344,7 +344,7 @@ public class NoncodingRNAAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testNcRnaExonicVar652() throws AnnotationException {
+	public void testNcRnaExonicVar652() throws JannovarException {
 		byte chr = Y_CHROMOSOME;
 		int pos = 23749507;
 		String ref = "G";

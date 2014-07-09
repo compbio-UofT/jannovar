@@ -3,10 +3,13 @@ package jannovar.annotation;
 import jannovar.common.Constants;
 import jannovar.common.VariantType;
 import jannovar.exception.AnnotationException;
+import jannovar.exception.JannovarException;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * This class collects all the information about a variant and its annotations and 
@@ -53,8 +56,8 @@ import java.util.HashSet;
  */
 
 public class AnnotatedVariantFactory implements Constants {
-   
-   
+
+    private static final Log LOG = LogFactory.getLog(AnnotatedVariantFactory.class);
 
     /** List of all {@link jannovar.annotation.Annotation Annotation} objects found for exonic variation. */
     private ArrayList<Annotation> annotationLst =null;
@@ -356,7 +359,7 @@ public class AnnotatedVariantFactory implements Constants {
      * method avaoid such duplicate annotations. 
      * @param ann The annotation that is to be added to the list of annotations for the current sequence variant.
      */
-    public void addUpDownstreamAnnotation(Annotation ann){
+    public void addUpDownstreamAnnotation(Annotation ann) throws JannovarException{
 	for (Annotation a: annotationLst) {
 	    if (a.equals(ann)) return;
 	}
@@ -367,10 +370,11 @@ public class AnnotatedVariantFactory implements Constants {
 	} else if (type == VariantType.UPSTREAM) {
 	    this.hasUpstream=true;
 	} else {
-	    System.err.println("Warning [AnnotatedVar.java]: Was expecting UPSTREAM or DOWNSTREAM" +
-			       " type of variant but got " + type);
+	    String msg = "Warning [AnnotatedVar.java]: Was expecting UPSTREAM or DOWNSTREAM" +
+			       " type of variant but got " + type;
+	    LOG.error(msg);
 	    /* TODO -- Add Exception! */
-	    System.exit(1);
+	    throw new JannovarException(msg);
 	}
 	this.annotationCount++;
     }
@@ -379,14 +383,14 @@ public class AnnotatedVariantFactory implements Constants {
      * Print out all annotations we have for debugging purposes (before summarization)
      */
     public void debugPrint() {
-	System.out.println("[AnnotatedVariantFactory]:debugPrint");
-	System.out.println("Total annotations: " + annotationCount);
+	LOG.info("[AnnotatedVariantFactory]:debugPrint");
+	LOG.info("Total annotations: " + annotationCount);
 	for (Annotation a : this.annotationLst) {
-	    System.out.println("\t[" + a.getVariantTypeAsString() + "] \"" + a.getGeneSymbol() + "\" -> " + a.getVariantAnnotation());
+	    LOG.info("\t[" + a.getVariantTypeAsString() + "] \"" + a.getGeneSymbol() + "\" -> " + a.getVariantAnnotation());
 	}
     }
 
 
 
-    
+
 }

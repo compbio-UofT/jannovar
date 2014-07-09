@@ -55,7 +55,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar2() throws AnnotationException {
+	public void testFSDeletionVar2() throws JannovarException {
 		byte chr = 1;
 		int pos = 17087544;
 		String ref = "GCTGT";
@@ -78,7 +78,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar4() throws AnnotationException {
+	public void testFSDeletionVar4() throws JannovarException {
 		byte chr = 1;
 		int pos = 247978544;
 		String ref = "GAG";
@@ -127,7 +127,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar6() throws AnnotationException {
+	public void testFSDeletionVar6() throws JannovarException {
 		byte chr = 3;
 		int pos = 44540796;
 		String ref = "TC";
@@ -150,7 +150,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar8() throws AnnotationException {
+	public void testFSDeletionVar8() throws JannovarException {
 		byte chr = 3;
 		int pos = 97983497;
 		String ref = "TGTAACCAC";
@@ -174,7 +174,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar9() throws AnnotationException {
+	public void testFSDeletionVar9() throws JannovarException {
 		byte chr = 3;
 		int pos = 98216799;
 		String ref = "TTTCCCTCTAT";
@@ -199,7 +199,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar10() throws AnnotationException {
+	public void testFSDeletionVar10() throws JannovarException {
 		byte chr = 5;
 		int pos = 140215471;
 		String ref = "GCGCG";
@@ -222,7 +222,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar11() throws AnnotationException {
+	public void testFSDeletionVar11() throws JannovarException {
 		byte chr = 5;
 		int pos = 140615504;
 		String ref = "GTC";
@@ -245,7 +245,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar12() throws AnnotationException {
+	public void testFSDeletionVar12() throws JannovarException {
 		byte chr = 6;
 		int pos = 27879113;
 		String ref = "T";
@@ -269,7 +269,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar13() throws AnnotationException {
+	public void testFSDeletionVar13() throws JannovarException {
 		byte chr = 6;
 		int pos = 39278701;
 		String ref = "AAG";
@@ -294,7 +294,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar14() throws AnnotationException {
+	public void testFSDeletionVar14() throws JannovarException {
 		byte chr = 9;
 		int pos = 5921980;
 		String ref = "GTT";
@@ -318,7 +318,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar16() throws AnnotationException {
+	public void testFSDeletionVar16() throws JannovarException {
 		byte chr = 10;
 		int pos = 51768676;
 		String ref = "AA";
@@ -341,7 +341,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar17() throws AnnotationException {
+	public void testFSDeletionVar17() throws JannovarException {
 		byte chr = 10;
 		int pos = 51768775;
 		String ref = "TGA";
@@ -365,7 +365,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar18() throws AnnotationException {
+	public void testFSDeletionVar18() throws JannovarException {
 		byte chr = 11;
 		int pos = 56380553;
 		String ref = "GACA";
@@ -389,7 +389,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar19() throws AnnotationException {
+	public void testFSDeletionVar19() throws JannovarException {
 		byte chr = 12;
 		int pos = 8376101;
 		String ref = "G";
@@ -413,7 +413,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar21() throws AnnotationException {
+	public void testFSDeletionVar21() throws JannovarException {
 		byte chr = 12;
 		int pos = 123880924;
 		String ref = "TT";
@@ -441,7 +441,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar22() throws AnnotationException {
+	public void testFSDeletionVar22() throws JannovarException {
 		byte chr = 13;
 		int pos = 46170726;
 		String ref = "ACTCTTCCTCCTCCAGAT";
@@ -464,7 +464,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar23() throws AnnotationException {
+	public void testFSDeletionVar23() throws JannovarException {
 		byte chr = 15;
 		int pos = 74536404;
 		String ref = "AAG";
@@ -487,7 +487,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar24() throws AnnotationException {
+	public void testFSDeletionVar24() throws JannovarException {
 		byte chr = 15;
 		int pos = 74536404;
 		String ref = "AAG";
@@ -510,7 +510,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar25() throws AnnotationException {
+	public void testFSDeletionVar25() throws JannovarException {
 		byte chr = 15;
 		int pos = 78208899;
 		String ref = "CTC";
@@ -533,7 +533,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar26() throws AnnotationException {
+	public void testFSDeletionVar26() throws JannovarException {
 		byte chr = 17;
 		int pos = 7470288;
 		String ref = "A";
@@ -557,7 +557,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar28() throws AnnotationException {
+	public void testFSDeletionVar28() throws JannovarException {
 		byte chr = 17;
 		int pos = 29161960;
 		String ref = "GTCAAT";
@@ -580,7 +580,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar29() throws AnnotationException {
+	public void testFSDeletionVar29() throws JannovarException {
 		byte chr = 17;
 		int pos = 61660895;
 		String ref = "G";
@@ -603,7 +603,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * NM_030931(DEFB126_v001):c.317_318del NM_030931(DEFB126_i001):p.(Pro106Argfs*27) p.P106Rfs
 	 */
 	@Test
-	public void testFSDeletionVar32() throws AnnotationException {
+	public void testFSDeletionVar32() throws JannovarException {
 		byte chr = 20;
 		int pos = 126314;
 		String ref = "CC";
@@ -627,7 +627,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar33() throws AnnotationException {
+	public void testFSDeletionVar33() throws JannovarException {
 		byte chr = 21;
 		int pos = 42551468;
 		String ref = "GTGTCAGGGTGAGTGAGGG";
@@ -652,7 +652,7 @@ public class DeletionAnnotationTest implements Constants {
 	 * </P>
 	 */
 	@Test
-	public void testFSDeletionVar31() throws AnnotationException {
+	public void testFSDeletionVar31() throws JannovarException {
 		byte chr = 19;
 		int pos = 58579808;
 		String ref = "CCAGAG";
