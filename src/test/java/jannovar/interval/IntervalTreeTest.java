@@ -94,6 +94,16 @@ public class IntervalTreeTest {
 
 	}
 
+	public List<Interval<String>> getIntervalList4() throws JannovarException {
+		List<Interval<String>> ilist = new ArrayList<Interval<String>>();
+
+		ilist.add(new Interval<String>(0, 11, "a"));
+		ilist.add(new Interval<String>(15, 36, "b"));
+
+		return ilist;
+
+	}
+
 	@Test
 	public void testSearchPub1() throws JannovarException {
 		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList2());
@@ -158,8 +168,7 @@ public class IntervalTreeTest {
 	}
 
 	/**
-	 * Tests not finding an interval but getting the left neighbor, this is
-	 * d=(5,7)
+	 * Tests not finding an interval but getting the left neighbor, this is d=(5,7)
 	 */
 	@Test
 	public void testSearch3b() throws JannovarException {
@@ -195,6 +204,22 @@ public class IntervalTreeTest {
 		List<String> qy = tree.search(69, 69);
 		String rt = tree.getLeftNeighbor();
 		Assert.assertEquals("g", rt);
+	}
+
+	/** Tests median */
+	@Test
+	public void testSearch100() throws JannovarException {
+		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList4());
+		List<String> qy = tree.search(5, 5);
+		Assert.assertEquals(1, qy.size());
+	}
+
+	/** Tests median */
+	@Test
+	public void testSearch101() throws JannovarException {
+		IntervalTree<String> tree = new IntervalTree<String>(getIntervalList4());
+		List<String> qy = tree.search(25, 25);
+		Assert.assertEquals(1, qy.size());
 	}
 
 }

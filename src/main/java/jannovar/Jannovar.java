@@ -197,6 +197,11 @@ public class Jannovar {
 
 	/** chromosomal position an NA change (e.g. chr1:12345C>A) */
 	private String chromosomalChange;
+    
+    /**
+     * Flag indicating if the RefSeq serialized outputfile should only contain curated entries.
+     */
+    private boolean onlyCuratedRefSeq;
 
 	public static void main(String argv[]) throws JannovarException {
 		Jannovar anno = new Jannovar(argv);
@@ -237,11 +242,11 @@ public class Jannovar {
 			try {
 				anno.deserializeTranscriptDefinitionFile();
 			} catch (JannovarException je) {
-				LOG.error("[JANNOVAR ERROR] Could not deserialize UCSC data: " + je.toString());
+				LOG.error("[ERROR] Could not deserialize UCSC data: " + je.toString());
 				throw je;
 			}
 		} else {
-			LOG.error("[JANNOVAR ERROR] You need to pass ucscs.ser file to perform analysis.");
+			LOG.error("[ERROR] You need to pass ucscs.ser file to perform analysis.");
 			usage();
 			throw new JannovarException("Missing .ser file (ucscs.ser not passed?)");
 		}
@@ -253,12 +258,12 @@ public class Jannovar {
 			try {
 				anno.annotateVCF(); /* 3a or 3b */
 			} catch (JannovarException je) {
-				LOG.error("[JANNOVAR ERROR] Could not annotate VCF data: " + je.toString());
+				LOG.error("[ERROR] Could not annotate VCF data: " + je.toString());
 				throw je;
 			}
 		} else {
 			if (anno.chromosomalChange == null) {
-				LOG.error("[JANNOVAR ERROR] No VCF file found and no chromosomal position and variation was found");
+				LOG.error("[ERROR] No VCF file found and no chromosomal position and variation was found");
 				throw new JannovarException("No VCF file found an no chromosomal position and variation was found");
 			} else {
 				try {
@@ -634,7 +639,7 @@ public class Jannovar {
 	 */
 	public void serializeRefseqData() throws JannovarException {
 		SerializationManager manager = new SerializationManager();
-		LOG.info("Serializing RefSeq data as " + String.format(dirPath + Jannovar.RefseqSerializationFileName, genomeRelease.getUCSCString(genomeRelease)));
+		System.out.println("[INFO] Serializing RefSeq data as " + String.format(dirPath + Jannovar.RefseqSerializationFileName, genomeRelease.getUCSCString(genomeRelease)));
 		manager.serializeKnownGeneList(String.format(dirPath + Jannovar.RefseqSerializationFileName, genomeRelease.getUCSCString(genomeRelease)), this.transcriptModelList);
 	}
 
@@ -648,7 +653,7 @@ public class Jannovar {
 	 */
 	public void serializeEnsemblData() throws JannovarException {
 		SerializationManager manager = new SerializationManager();
-		LOG.info("Serializing Ensembl data as " + String.format(dirPath + Jannovar.EnsemblSerializationFileName, genomeRelease.getUCSCString(genomeRelease)));
+		System.out.println("[INFO] Serializing Ensembl data as " + String.format(dirPath + Jannovar.EnsemblSerializationFileName, genomeRelease.getUCSCString(genomeRelease)));
 		manager.serializeKnownGeneList(String.format(dirPath + Jannovar.EnsemblSerializationFileName, genomeRelease.getUCSCString(genomeRelease)), this.transcriptModelList);
 	}
 
@@ -662,7 +667,7 @@ public class Jannovar {
 	 */
 	public void serializeUCSCdata() throws JannovarException {
 		SerializationManager manager = new SerializationManager();
-		LOG.info("Serializing UCSC data as " + String.format(dirPath + Jannovar.UCSCserializationFileName, genomeRelease.getUCSCString(genomeRelease)));
+		System.out.println("[INFO] Serializing UCSC data as " + String.format(dirPath + Jannovar.UCSCserializationFileName, genomeRelease.getUCSCString(genomeRelease)));
 		manager.serializeKnownGeneList(String.format(dirPath + Jannovar.UCSCserializationFileName, genomeRelease.getUCSCString(genomeRelease)), this.transcriptModelList);
 	}
 
@@ -713,7 +718,7 @@ public class Jannovar {
 			throw new JannovarException("Unknown release: "+genomeRelease);
 		}
 		try {
-			this.transcriptModelList = gff.getTranscriptModelBuilder().buildTranscriptModels();
+			this.transcriptModelList = gff.getTranscriptModelBuilder().buildTranscriptModels(onlyCuratedRefSeq);
 		} catch (InvalidAttributException e) {
 			LOG.error("Unable to input data from the Refseq files", e);
 			throw new JannovarException(e.getMessage());
@@ -827,6 +832,7 @@ public class Jannovar {
 			options.addOption(new Option("g", "genome", true, "genome build (mm9, mm10, hg18, hg19, hg38 - only refseq), default hg19"));
 			options.addOption(new Option(null, "create-ucsc", false, "Create UCSC definition file"));
 			options.addOption(new Option(null, "create-refseq", false, "Create RefSeq definition file"));
+			options.addOption(new Option(null, "create-refseq-c", false, "Create RefSeq definition file w/o predicted transcripts"));
 			options.addOption(new Option(null, "create-ensembl", false, "Create Ensembl definition file"));
 			options.addOption(new Option(null, "proxy", true, "FTP Proxy"));
 			options.addOption(new Option(null, "proxy-port", true, "FTP Proxy Port"));
@@ -850,9 +856,11 @@ public class Jannovar {
 				this.createUCSC = false;
 			}
 
-			if (cmd.hasOption("create-refseq")) {
+			if (cmd.hasOption("create-refseq") | cmd.hasOption("create-refseq-c")) {
 				this.createRefseq = true;
 				this.performSerialization = true;
+				if (cmd.hasOption("create-refseq-c"))
+					this.onlyCuratedRefSeq = true;
 			} else {
 				this.createRefseq = false;
 			}
